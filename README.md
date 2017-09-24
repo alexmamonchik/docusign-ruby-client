@@ -53,7 +53,7 @@ To initialize the client and make the Login API Call using the JWT authenticatio
 	login_options = DocuSign_eSign::LoginOptions.new
 	login_information = authentication_api.login(login_options)
 
-	if !login_information.nil?
+	unless login_information.nil?
 		login_information.login_accounts.each do |login_account|
 			if login_account.is_default == "true"
 				# STEP 4: Extract the user information
